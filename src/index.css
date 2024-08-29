@@ -1,10 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-@layer utilities {
-    .transition-max-height {
-      transition-property: max-height;
-    }
-  }

@@ -1,4 +1,3 @@
-// src/App.js
 import { useState } from "react";
 import FileUploader from "./components/FileUploader/FileUploader";
 import AppContainer from "./components/Layout/AppContainer";
@@ -6,17 +5,17 @@ import Header from "./components/Layout/Header";
 import Tree from "./components/Tree/Tree";
 
 function App() {
-  const [data,setData]=useState<any>(null)
-  const onDataParsed = (data:any) => {
-    setData(data)
+  const [data, setData] = useState<any>(null);
+  const onDataParsed = (data: any) => {
+    setData(data);
   };
 
   return (
     <div className="App">
       <AppContainer>
-        <Header/>
+        <Header />
         <FileUploader onDataParsed={onDataParsed} />
-        {data&&<Tree data={data}/>}
+        {data && <Tree data={data} />}
       </AppContainer>
     </div>
   );
