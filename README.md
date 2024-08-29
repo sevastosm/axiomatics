@@ -62,7 +62,6 @@ npm run test or yarn test
 ## Project Structure
 
 The project is organized as follows:
-```bash
 
 src/
 ├── components/
