@@ -20,7 +20,7 @@ export function parseXML(xmlString: string) {
    */
 
   const parseNode = (node: Element) => {
-    const obj: Element & { _attributes?: Record<string, string> } | any = {};
+    let obj = {};
     // If the node has no children and no attributes, it's an empty element
     if (node.childNodes.length === 0 && node.attributes.length === 0) {
       return "";
@@ -28,10 +28,10 @@ export function parseXML(xmlString: string) {
 
     // If the node has attributes, add them to the object
     if (node.attributes.length > 0) {
-      obj._attributes = {};
+      obj = {};
       for (let i = 0; i < node.attributes.length; i++) {
         const attribute = node.attributes[i];
-        obj._attributes[attribute.name as string] = attribute.value;
+        obj[attribute.name as string] = attribute.value;
       }
     }
 

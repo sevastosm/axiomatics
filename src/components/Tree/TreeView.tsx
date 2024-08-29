@@ -31,16 +31,14 @@ const TreeView: React.FC<TreeViewProps> = ({ data, label }) => {
           {hasChildren && (
             <span className="text-lg">{isCollapsed ? "►" : "▼"}</span>
           )}
-          <span className="font-medium">{option}:</span>
+          <span className="font-medium capitalize">{option}:</span>
           {!hasChildren && typeof data === "string" && (
             <span className="text-gray-600">{data.replace("xacml3:", "")}</span>
           )}
         </div>
       )}
       {!isCollapsed && hasChildren && (
-        <ul
-          className={`list-none pl-4`}
-        >
+        <ul className={`list-none pl-4`}>
           {Object.keys(data as string).map((key) => (
             <li key={key}>
               <TreeView data={(data as string)[key]} label={key} />
